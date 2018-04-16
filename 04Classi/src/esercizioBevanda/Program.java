@@ -18,15 +18,15 @@ public class Program
 		
 		System.out.println(uno.contabevande("fanta"));
 		System.out.println(uno.getDisponobilita());
+		System.out.println(fanta.getQuantita());
 		
 		Bevanda sprite = new Bevanda("sprite");
 		sprite.bevi(10);
-		System.out.println(sprite.getQuantita());
+		System.out.println(sprite.getLiquidoRimanente());
 		
-		sprite.aggiungiLiquido(3
-				);
+		sprite.aggiungiLiquido(5);
 		
-		System.out.println(sprite.getQuantita());
+		System.out.println(sprite.getLiquidoRimanente());
 
 	}
 

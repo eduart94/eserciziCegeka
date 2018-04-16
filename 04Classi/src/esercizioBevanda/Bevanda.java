@@ -3,28 +3,28 @@ package esercizioBevanda;
 public class Bevanda
 {
 	private String nome;
-	private int quantitaRimanente;
+	private int capacitaRimanente;
 	private int numeroBottiglie;
 	private static int capacita= 33;
 	
 	public Bevanda(String _nome)
 	{
 		this.nome = _nome;
-		this.quantitaRimanente = this.capacita;
+		this.capacitaRimanente = this.capacita;
 	}
 	
 	public Bevanda(String _nome, int _numeroBottiglie) 
 	{
 		this.numeroBottiglie = _numeroBottiglie;
 		this.nome = _nome;
-		this.quantitaRimanente = this.capacita;
+		this.capacitaRimanente = this.capacita;
 	}
 	
 	public void bevi(int quantita)
 	{
-		if(this.quantitaRimanente > quantita)
+		if(this.capacitaRimanente > quantita)
 		{
-			this.quantitaRimanente -= quantita;
+			this.capacitaRimanente -= quantita;
 			
 		}
 		
@@ -32,13 +32,13 @@ public class Bevanda
 	
 	public void aggiungiLiquido(int quantita)
 	{
-		if(quantita + this.quantitaRimanente>this.capacita) 
+		if(quantita + this.capacitaRimanente>this.capacita) 
 		{
-			this.quantitaRimanente = 33;
+			this.capacitaRimanente = this.capacita;
 		}
 		else
 		{
-			this.quantitaRimanente= this.quantitaRimanente + quantita;
+			this.capacitaRimanente= this.capacitaRimanente + quantita;
 		}
 	}
 	
@@ -47,8 +47,18 @@ public class Bevanda
 		return this.nome;
 	}
 	
+	public int getLiquidoRimanente()
+	{
+		return this.capacitaRimanente;
+	}
+	
 	public int getQuantita()
 	{
-		return this.quantitaRimanente;
+		return this.numeroBottiglie;
+	}
+	
+	public void setQuantita(int quantita)
+	{
+		this.numeroBottiglie= quantita;
 	}
 }

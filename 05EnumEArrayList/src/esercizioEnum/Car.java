@@ -11,7 +11,8 @@ public class Car
 	public Car(double _resa, TipoCarburante _carburante ) 
 	{
 		this.resa= _resa;
-		this.carburante = _carburante;
+
+		.carburante = _carburante;
 		this.carburanteContenuto = 0;
 	}
 	
