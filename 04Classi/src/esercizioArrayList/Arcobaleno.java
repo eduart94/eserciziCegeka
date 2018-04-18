@@ -42,7 +42,8 @@ public class Arcobaleno
 		
 		for(String c : this.colori) 
 		{
-			if(c.equals(colore)) {
+			if(c.equals(colore))
+			{
 				colori.remove(colore);
 				break;
 			}

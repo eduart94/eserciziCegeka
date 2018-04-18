@@ -9,15 +9,19 @@ public abstract class ContrattoTelefonico
 	protected int costoMensile;
 	protected String numeroTelefono;
 	protected int costoAnnuale;
+	protected int costoMinuto;
+	protected int scattoRisposta;
 	
-	public ContrattoTelefonico (String _nomeCliente, String _cognomeCliente, String _codiceFiscale, String _numeroTelefono, String _operatore, int _costo)
+	public ContrattoTelefonico (String _nomeCliente, String _cognomeCliente, String _codiceFiscale, String _numeroTelefono, String _operatore, int _costoMensile, int _costoMinuto, int _scattoRisposta)
 	{
 		this.nomeCliente = _nomeCliente;
 		this.operatore = _operatore;
-		this.costoMensile = _costo;
+		this.costoMensile = _costoMensile;
 		this.codiceFiscale = _codiceFiscale;
 		this.cognomeCliente = _cognomeCliente;
 		this.numeroTelefono = _numeroTelefono;
+		this.costoMinuto = _costoMinuto;
+		this.scattoRisposta = _scattoRisposta;
 		
 	}
 	
@@ -34,11 +38,7 @@ public abstract class ContrattoTelefonico
 		annuale = this.costoMensile * 12;
 		return annuale;
 	}
-	public String getCostoStringa()
-	{
-		String costo = Integer.toString(costoMensile);
-		return costo;
-	}
+	
 	
 	
 	public String getInfo()
@@ -46,6 +46,13 @@ public abstract class ContrattoTelefonico
 		String costoMensile = Integer.toString(this.costoMensile);
 		String info = this.nomeCliente + " " + this.cognomeCliente+ " " +this.codiceFiscale+ " " + this.operatore+ " " +costoMensile;
 		return info;
+	}
+	
+	public int costoChiamata(int numeroMinuti)
+	{
+		int costo;
+		costo = this.costoMinuto*numeroMinuti + this.scattoRisposta;
+		return costo;
 	}
 	
 	public void setNome(String _nome)

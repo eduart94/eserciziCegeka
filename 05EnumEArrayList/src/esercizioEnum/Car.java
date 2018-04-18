@@ -12,7 +12,7 @@ public class Car
 	{
 		this.resa= _resa;
 
-		.carburante = _carburante;
+		this.carburante = _carburante;
 		this.carburanteContenuto = 0;
 	}
 	
